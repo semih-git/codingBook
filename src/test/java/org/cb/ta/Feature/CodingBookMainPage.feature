@@ -10,3 +10,9 @@ Feature: CodingBook Main Page
     When User checks if CodingBook LinkedIn icon is visible on the top right corner
     And User clicks CodingBook LinkedIn icon
     Then Test if user landed CodingBook LinkedIn page
+
+  Scenario: Test CodingBook Test Automation submenu under Courses menu
+    Given User lands to Courses menu on CodingBook web page
+    When User moves mouse to Test Automation sub menu under Courses menu
+    And User clicks Test Automation sub menu
+    Then Test if user landed Test Automation page
