@@ -3,31 +3,39 @@ package org.cb.ta.TestSteps;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.cb.ta.CodingBookMainPage;
+import org.cb.ta.Driver;
+import org.testng.Assert;
 
-public class CodingBookMainPageTest {
+public class CodingBookMainPageTest extends Driver {
+        CodingBookMainPage codingBookMainPage;
 
-        @Given("User opens CodingBook web page")
+    public CodingBookMainPageTest() {
+        this.codingBookMainPage = new CodingBookMainPage(driver);
+    }
+
+    @Given("User opens CodingBook web page")
         public void user_opens_coding_book_web_page() {
             // Write code here that turns the phrase above into concrete actions
-            throw new io.cucumber.java.PendingException();
+            Assert.assertEquals(driver.getCurrentUrl(),"https://codingbook.org/");
         }
 
         @When("User checks if CodingBook logo is visible on the top left corner")
         public void user_checks_if_coding_book_logo_is_visible_on_the_top_left_corner() {
             // Write code here that turns the phrase above into concrete actions
-            throw new io.cucumber.java.PendingException();
+            Assert.assertTrue(codingBookMainPage.getWebElementLogo().isDisplayed());
         }
 
         @When("User clicks CodingBook logo")
         public void user_clicks_coding_book_logo() {
             // Write code here that turns the phrase above into concrete actions
-            throw new io.cucumber.java.PendingException();
+            codingBookMainPage.getWebElementLogo().click();
         }
 
         @Then("Test if user landed CodingBook homepage")
         public void test_if_user_landed_coding_book_homepage() {
             // Write code here that turns the phrase above into concrete actions
-            throw new io.cucumber.java.PendingException();
+            user_opens_coding_book_web_page();
         }
 
         @When("User checks if CodingBook LinkedIn icon is visible on the top right corner")
